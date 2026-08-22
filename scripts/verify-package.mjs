@@ -18,7 +18,7 @@ if (forbidden.length || missing.length) {
   missing.forEach(path => console.error(`missing package path: ${path}`))
   process.exit(1)
 }
-const extracted = await mkdtemp(join(tmpdir(), 'dsh-usage-package-verify-'))
+const extracted = await mkdtemp(join(tmpdir(), 'dsh-cost-package-verify-'))
 const canonical = value => Array.isArray(value) ? value.map(canonical) : value && typeof value === 'object' ? Object.fromEntries(Object.entries(value).sort(([a], [b]) => a.localeCompare(b)).map(([key, item]) => [key, canonical(item)])) : value
 try {
   execFileSync('tar', ['-xf', archive, '-C', extracted])

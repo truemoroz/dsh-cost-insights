@@ -1,5 +1,11 @@
 # 更新日志
 
+## 1.0.1 - 2026-08-22
+
+- 将项目、仓库和插件标识从 `dsh-usage-insights` 更名为 `dsh-cost-insights`，避免与现有插件重名。
+- 保留 `storages/usage-insights/ledger.sqlite` 数据路径，确保历史账本继续可用。
+- 更新发布工作流，使后续语义化版本标签均可生成 GitHub Release。
+
 ## 1.0.0 - 2026-08-22
 
 首个正式版本。

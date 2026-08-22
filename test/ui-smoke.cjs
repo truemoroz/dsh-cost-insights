@@ -20,7 +20,7 @@ async function completeOnboarding(page) {
 }
 
 async function openUsage(page) {
-  const labeled = page.getByText(/Usage & Cost|用量统计/, { exact: true }).first()
+  const labeled = page.getByText(/Cost Insights|用量与费用分析/, { exact: true }).first()
   const footer = page.locator('.dui-side').first()
   if (!await labeled.isVisible().catch(() => false) && !await footer.isVisible().catch(() => false)) {
     const sidebarToggle = page.getByRole('button', { name: /Open sidebar|打开侧边栏/ }).first()

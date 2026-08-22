@@ -1,9 +1,9 @@
-# DSH Usage Insights
+# DSH Cost Insights
 
 [简体中文](README.md)
 
-[![CI](https://github.com/elviass/dsh-usage-insights/actions/workflows/ci.yml/badge.svg)](https://github.com/elviass/dsh-usage-insights/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/elviass/dsh-usage-insights/actions/workflows/codeql.yml/badge.svg)](https://github.com/elviass/dsh-usage-insights/actions/workflows/codeql.yml)
+[![CI](https://github.com/elviass/dsh-cost-insights/actions/workflows/ci.yml/badge.svg)](https://github.com/elviass/dsh-cost-insights/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/elviass/dsh-cost-insights/actions/workflows/codeql.yml/badge.svg)](https://github.com/elviass/dsh-cost-insights/actions/workflows/codeql.yml)
 
 A local usage and cost analytics plugin for DeepSeek Harness, covering tokens, cache activity, API balances, and model pricing.
 
@@ -21,19 +21,23 @@ A local usage and cost analytics plugin for DeepSeek Harness, covering tokens, c
 
 ## Install
 
-1. Download `dsh-usage-insights-1.0.0.tgz` from the [v1.0.0 release](https://github.com/elviass/dsh-usage-insights/releases/tag/v1.0.0).
+1. Download `dsh-cost-insights-1.0.1.tgz` from the [v1.0.1 release](https://github.com/elviass/dsh-cost-insights/releases/tag/v1.0.1).
 2. Install the downloaded archive for the appropriate DSH profile:
 
    ```console
-   dsh plugin --profile web add ./dsh-usage-insights-1.0.0.tgz
+   dsh plugin --profile web add ./dsh-cost-insights-1.0.1.tgz
    ```
 
-> This project is distributed only through GitHub Releases. The unscoped npm name
-> `dsh-usage-insights` belongs to another publisher and is unrelated to this project.
+> This project is distributed only through GitHub Releases. The former name
+> `dsh-usage-insights` and the same-named npm package no longer identify this project.
+
+When upgrading from v1.0.0, remove the old `dsh-usage-insights` package from the
+profile before installing the renamed package. The ledger remains at
+`storages/usage-insights/ledger.sqlite`, so the rename does not move or delete history.
 
 ## Usage
 
-After installing and starting DSH, open **Settings → Usage Insights** for the full
+After installing and starting DSH, open **Settings → Cost Insights** for the full
 dashboard. The line below the conversation composer shows current model pricing,
 conversation cost, and supported API balances; the sidebar shows today's total cost.
 
@@ -45,8 +49,8 @@ In **More → About**, click the version seven times to export a sanitized diagn
 - Node.js `^22.19.0 || >=24.0.0`
 - DSH web client
 
-Version 1.0.0 was installation-tested with DSH `0.1.0-rc.7` and `0.1.1-rc.2` in
-independent temporary `DSH_HOME` directories.
+Version 1.0.1 retains the compatibility range validated for v1.0.0 with DSH
+`0.1.0-rc.7` and `0.1.1-rc.2` in independent temporary `DSH_HOME` directories.
 
 ## Data and privacy
 

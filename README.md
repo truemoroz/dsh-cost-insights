@@ -1,9 +1,9 @@
-# DSH Usage Insights / 用量统计
+# DSH Cost Insights / 用量与费用分析
 
 [English](README.en.md)
 
-[![CI](https://github.com/elviass/dsh-usage-insights/actions/workflows/ci.yml/badge.svg)](https://github.com/elviass/dsh-usage-insights/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/elviass/dsh-usage-insights/actions/workflows/codeql.yml/badge.svg)](https://github.com/elviass/dsh-usage-insights/actions/workflows/codeql.yml)
+[![CI](https://github.com/elviass/dsh-cost-insights/actions/workflows/ci.yml/badge.svg)](https://github.com/elviass/dsh-cost-insights/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/elviass/dsh-cost-insights/actions/workflows/codeql.yml/badge.svg)](https://github.com/elviass/dsh-cost-insights/actions/workflows/codeql.yml)
 
 面向 DeepSeek Harness 的本地用量与费用分析插件，提供 Token、缓存、API 余额和模型价格统计。
 
@@ -21,19 +21,22 @@
 
 ## 安装
 
-1. 从 [v1.0.0](https://github.com/elviass/dsh-usage-insights/releases/tag/v1.0.0) 下载 `dsh-usage-insights-1.0.0.tgz`。
+1. 从 [v1.0.1](https://github.com/elviass/dsh-cost-insights/releases/tag/v1.0.1) 下载 `dsh-cost-insights-1.0.1.tgz`。
 2. 使用对应 DSH profile 安装下载的压缩包：
 
    ```console
-   dsh plugin --profile web add ./dsh-usage-insights-1.0.0.tgz
+   dsh plugin --profile web add ./dsh-cost-insights-1.0.1.tgz
    ```
 
-> 本项目只通过 GitHub Releases 分发。npm 上未加 scope 的 `dsh-usage-insights`
-> 属于另一位发布者，与本项目无关，请勿从 npm 安装。
+> 本项目只通过 GitHub Releases 分发。旧名称 `dsh-usage-insights` 与 npm 上的同名包
+> 均不再代表本项目，请使用 `dsh-cost-insights`。
+
+从 v1.0.0 升级时，请先从对应 profile 移除旧名称 `dsh-usage-insights`，再安装新包。
+账本仍保存在 `storages/usage-insights/ledger.sqlite`，改名不会迁移或删除历史数据。
 
 ## 使用方法
 
-安装并启动 DSH 后，在“设置 → 用量统计”中查看完整页面。对话输入区下方会显示当前
+安装并启动 DSH 后，在“设置 → 用量与费用”中查看完整页面。对话输入区下方会显示当前
 模型价格、当前对话费用和支持接口的余额；侧边栏会显示今日总花费。
 
 “更多 → 关于”中连续点击版本号 7 次，可以导出经过脱敏处理的诊断日志。
@@ -44,8 +47,8 @@
 - Node.js `^22.19.0 || >=24.0.0`
 - DSH Web 客户端
 
-v1.0.0 已在独立临时 `DSH_HOME` 中通过 DSH `0.1.0-rc.7` 和 `0.1.1-rc.2`
-安装验证，不会读取或修改正常的 `%USERPROFILE%\.dsh`。
+v1.0.1 延续 v1.0.0 的兼容范围；后者已在独立临时 `DSH_HOME` 中通过 DSH
+`0.1.0-rc.7` 和 `0.1.1-rc.2` 安装验证，不会读取或修改正常的 `%USERPROFILE%\.dsh`。
 
 ## 数据与隐私
 

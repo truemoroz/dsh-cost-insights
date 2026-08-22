@@ -12,8 +12,8 @@ const [client, store, changelog, workspace, license] = await Promise.all([
 ])
 
 requireText(pkg.private === true, 'package.json must remain private for GitHub-only distribution')
-requireText(pkg.version === '1.0.0', 'release version must be 1.0.0')
-requireText(pkg.repository?.url === 'git+https://github.com/elviass/dsh-usage-insights.git', 'repository URL mismatch')
+requireText(pkg.version === '1.0.1', 'release version must be 1.0.1')
+requireText(pkg.repository?.url === 'git+https://github.com/elviass/dsh-cost-insights.git', 'repository URL mismatch')
 requireText(pkg.engines?.node === '^22.19.0 || >=24.0.0', 'Node engine range mismatch')
 requireText(pkg.peerDependencies?.['@deepseek-ai/dsh'] === '>=0.1.0-rc.7 <0.2.0', 'DSH peer range mismatch')
 requireText(client.includes(`const PLUGIN_VERSION = '${pkg.version}'`), 'client version does not match package.json')
