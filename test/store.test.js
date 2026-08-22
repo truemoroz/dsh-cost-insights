@@ -6,7 +6,7 @@ import { join } from 'node:path'
 import { LedgerStore } from '../lib/store.js'
 
 test('SQLite ledger groups usage and never persists prompt, response, or key fields', async () => {
-  const root = await mkdtemp(join(tmpdir(), 'dsh-usage-insights-'))
+  const root = await mkdtemp(join(tmpdir(), 'dsh-cost-insights-'))
   const path = join(root, 'ledger.sqlite')
   const store = await new LedgerStore(path).open()
   try {
@@ -90,7 +90,7 @@ test('diagnostic export contains runtime health without sensitive fields', async
   try {
     const diagnostics = store.exportDiagnostics()
     const serialized = JSON.stringify(diagnostics)
-    assert.equal(diagnostics.plugin.version, '1.0.0')
+    assert.equal(diagnostics.plugin.version, '1.0.1')
     assert.equal(diagnostics.privacy.apiKeys, false)
     assert.equal(diagnostics.privacy.prompts, false)
     assert.equal(serialized.includes('DEEPSEEK_API_KEY'), false)

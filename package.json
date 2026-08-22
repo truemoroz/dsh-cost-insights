@@ -1,6 +1,6 @@
 {
-  "name": "dsh-usage-insights",
-  "version": "1.0.0",
+  "name": "dsh-cost-insights",
+  "version": "1.0.1",
   "private": true,
   "description": "Auditable usage, cost, token, cache, balance and pricing analytics for DeepSeek Harness.",
   "type": "module",
@@ -31,7 +31,7 @@
   },
   "dshhub": {
     "schemaVersion": 1,
-    "displayName": "Usage & Cost / 用量统计",
+    "displayName": "Cost Insights / 用量与费用分析",
     "summary": "按会话、工作区、模型、Provider 与任意日期范围查看费用、Token、缓存、余额和价格来源。",
     "categories": [
       "用量",
@@ -87,11 +87,11 @@
   "packageManager": "pnpm@10.34.5",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elviass/dsh-usage-insights.git"
+    "url": "git+https://github.com/elviass/dsh-cost-insights.git"
   },
-  "homepage": "https://github.com/elviass/dsh-usage-insights#readme",
+  "homepage": "https://github.com/elviass/dsh-cost-insights#readme",
   "bugs": {
-    "url": "https://github.com/elviass/dsh-usage-insights/issues"
+    "url": "https://github.com/elviass/dsh-cost-insights/issues"
   },
   "scripts": {
     "check": "node scripts/check-release.mjs && node --check lib/index.js && node --check lib/store.js && node --check lib/pricing.js && node --check lib/providers.js && node --check lib/validation.js && node --check lib/typert.host.js && node --check lib/client.js",
