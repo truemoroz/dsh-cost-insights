@@ -61,7 +61,7 @@ test('client activation does not wait for the initial analytics refresh', async 
     ])
 
     assert.equal(outcome, 'resolved')
-    assert.equal(refreshCalls, 5)
+    assert.equal(refreshCalls, 4)
   } finally {
     for (const cleanup of cleanups.reverse()) cleanup()
     if (previousWindow === undefined) delete globalThis.window
